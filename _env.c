@@ -1,14 +1,15 @@
 #include "shell.h"
 
 /**
- * _getenv - gets an environment variable’s value
+ * _getenv - finds an environment variable’s value
  * @shell: shell data struct
  * @name: name
  * Return: the env value
  */
 char *_getenv(sh_data *shell, char *name)
 {
-	int i, j, k, l, check;
+	int i, j, k, l;
+ 	int check;
 	char *value;
 
 	for (i = 0; shell->_environ[i]; i++)
