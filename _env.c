@@ -9,7 +9,7 @@
 char *_getenv(sh_data *shell, char *name)
 {
 	int i, j, k, l;
- 	int check;
+	int check;
 	char *value;
 
 	for (i = 0; shell->_environ[i]; i++)

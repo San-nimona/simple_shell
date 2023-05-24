@@ -7,7 +7,7 @@
 int (*get_func(char **arr))(sh_data *)
 {
 	built_in sh[] = {
-		{"exit", _exit},
+		{"exit", my_exit},
 		{"env", _env},
 		{"setenv", _set},
 		{"unsetenv", _unset},
@@ -48,7 +48,7 @@ void non_interact_mode(sh_data *shell)
 	{
 		path = check_shell(shell);
 		if (!path && shell->builtin == 0)
-			_exit(shell);
+			my_exit(shell);
 		else if (!path && shell->builtin == 1)
 			continue;
 
@@ -65,7 +65,7 @@ void non_interact_mode(sh_data *shell)
 				write(STDERR_FILENO, ": Permission denied\n", 20);
 				free(path);
 				shell->status = 13;
-				_exit(shell);
+				my_exit(shell);
 			}
 		}
 		else
@@ -112,7 +112,7 @@ void loop_shell(sh_data *shell)
 					write(STDERR_FILENO, ": Permission denied\n", 20);
 					free(path);
 					shell->status = 13;
-					_exit(shell);
+					my_exit(shell);
 				}
 			}
 			else
@@ -196,7 +196,7 @@ int main(int ac, char **av, char **env)
 	shell.av = malloc(sizeof(char *) * (ac + 1));
 	while (av[i])
 	{
-		shell.av[i] = my_strdup(av[0]);
+		shell.av[i] = _strdup(av[0]);
 		i++;
 	}
 	shell.av[i] = NULL;
@@ -205,7 +205,7 @@ int main(int ac, char **av, char **env)
 
 	shell._environ = malloc(sizeof(char *) * (i + 1));
 	for (i = 0; environ[i]; i++)
-		shell._environ[i] = my_strdup(environ[i]);
+		shell._environ[i] = _strdup(environ[i]);
 	shell._environ[i] = NULL;
 
 	shell.path = path_to_list(&shell);

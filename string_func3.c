@@ -80,7 +80,7 @@ int _isdigit(char *dgt)
  */
 void *_memchr(const void *src_void, int c, size_t length)
 {
-	const unsigned char *source = (const unsigned char *)src_void;
+	const unsigned char *src = (const unsigned char *)src_void;
 
 	while (length-- > 0)
 	{

@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * search_path - find a path linked list
  * @list: path list pointer
@@ -57,7 +58,7 @@ path_l *add_node_end(path_l **head, char *str)
 	if (!list)
 		return (NULL);
 
-	list->str = my_strdup(str);
+	list->str = _strdup(str);
 	list->next = NULL;
 
 	if (!temp)
