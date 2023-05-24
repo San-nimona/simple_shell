@@ -82,6 +82,7 @@ typedef struct built_in
 } built_in;
 
 alias_l *add_alias(alias_l **, char *, char *);
+void logical_ops(char *line, ssize_t *new_len);
 int _alias(sh_data *);
 int print_alias(sh_data *, char *);
 int print_all_alias(sh_data *);
@@ -128,5 +129,6 @@ void non_interact_mode(sh_data *);
 int rm_comments(char **);
 void expand_var(sh_data *);
 int cd_err(sh_data *, int);
+void help_exit(void);
 
 #endif
