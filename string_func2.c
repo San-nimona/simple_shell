@@ -9,7 +9,7 @@ int _strcmp(char *str1, char *str2)
 {
 	int i, j;
 
-	for (i = 0, j = 0; (str1[i] != '\0' || str2[i] != '\0'); n++)
+	for (i = 0, j = 0; (str1[i] != '\0' || str2[i] != '\0'); i++)
 	{
 		j = str1[i] - str2[i];
 		if (j != 0)
@@ -84,6 +84,7 @@ char *_strcpy(char *destination, char *source)
 char *_strcat(char *destination, char *source)
 {
 	int i = 0;
+	int j;
 
 	while (destination[i] != '\0')
 		i++;

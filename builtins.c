@@ -50,12 +50,12 @@ int _cd(sh_data *shell)
 }
 
 /**
- * _exit - exits the shell
+ * my_exit - exits the shell
  * @shell: shell data
  *
  * Return: exits with the shell status, or 0 if no status is specified
  */
-int _exit(sh_data *shell)
+int my_exit(sh_data *shell)
 {
 	int ex_it = shell->status;
 

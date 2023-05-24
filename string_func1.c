@@ -38,7 +38,7 @@ char *mod_env(sh_data *shell)
 	i = _strlen(shell->arr[1]);
 	j = _strlen(shell->arr[2]);
 
-	str = malloc(sizeof(char) * (len1 + len2 + 2));
+	str = malloc(sizeof(char) * (i + j + 2));
 	if (!str)
 		return (NULL);
 

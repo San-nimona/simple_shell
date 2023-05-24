@@ -17,24 +17,6 @@
 #include <unistd.h>
 #define DELIM_T " \t\n\a\r"
 
-void free_arr2(char **);
-void free_list(path_l *);
-int get_len(int);
-path_l *add_node_end(path_l **, char *);
-path_l *path_to_list(sh_data *);
-size_t print_list(const path_l *);
-void print_path_dir(void);
-extern char **environ;
-char **get_commands(sh_data *, char *, size_t);
-char *check_shell(sh_data *);
-char *_getenv(sh_data *, char *);
-char *search_path(path_l *, char *);
-int (*get_func(char **))(sh_data *);
-void loop_shell(sh_data *);
-void non_interact_mode(sh_data *);
-int rm_comments(char **);
-void expand_var(sh_data *);
-int cd_err(sh_data *, int);
 /**
  * struct path - The path's linked list
  * @str: a variable
@@ -86,7 +68,7 @@ typedef struct data
 	path_l *path;
 	pid_t pid;
 	size_t length;
-} sh_data;
+}sh_data;
 
 /**
  * struct built_in - builtin functions struct
@@ -110,7 +92,7 @@ int _cd(sh_data *);
 void mod_dir(sh_data *, char *, char *);
 int _env(sh_data *);
 char *mod_env(sh_data *);
-int _exit(sh_data *);
+int my_exit(sh_data *);
 int _set(sh_data *);
 int _unset(sh_data *);
 char *_strcat(char *, char *);
@@ -128,5 +110,23 @@ void _memcpy(void *, const void *, unsigned int);
 ssize_t _getline(char **, size_t *, FILE *);
 void insert_line(char **, size_t *n, char *, size_t);
 void reverse_str(char *);
+void free_arr2(char **);
+void free_list(path_l *);
+int get_len(int);
+path_l *add_node_end(path_l **, char *);
+path_l *path_to_list(sh_data *);
+size_t print_list(const path_l *);
+void print_path_dir(void);
+extern char **environ;
+char **get_commands(sh_data *, char *, size_t);
+char *check_shell(sh_data *);
+char *_getenv(sh_data *, char *);
+char *search_path(path_l *, char *);
+int (*get_func(char **))(sh_data *);
+void loop_shell(sh_data *);
+void non_interact_mode(sh_data *);
+int rm_comments(char **);
+void expand_var(sh_data *);
+int cd_err(sh_data *, int);
 
 #endif
