@@ -20,7 +20,6 @@ void _memcpy(void *destination, const void *source, unsigned int size)
  * @ptr: pointer to allocated memory
  * @old_size: the old size
  * @new_size: new size to be allocated
- *
  * Return: pointer to realloc mem
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
