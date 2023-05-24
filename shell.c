@@ -176,7 +176,6 @@ char *check_shell(sh_data *shell)
  * @ac: Argument count
  * @av: Arguments vector
  * @env: environment variables
- *
  * Return: 0
  */
 int main(int ac, char **av, char **env)
