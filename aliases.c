@@ -1,9 +1,8 @@
 #include "shell.h"
 
 /**
- * _alias - handles the alias builtin, sets and prints
+ * _alias - handles the alias builtin commands
  * @shell: pointer to the shell structure
- *
  * Return: 0 on success or appropriate err
  */
 int _alias(sh_data *shell)
@@ -68,7 +67,7 @@ int set_alias(sh_data *shell, char *arg)
  * print_all_alias - prints all aliases set in the current session
  * @shell: pointer to shell structure
  *
- * Return: 0 on success or 61 if no data is found
+ * Return: 0 or 61
  */
 int print_all_alias(sh_data *shell)
 {
@@ -76,10 +75,6 @@ int print_all_alias(sh_data *shell)
 	char *alias;
 	int len1, len2;
 
-	/**
-	 * write(STDERR_FILENO, shell->av[0], _strlen(shell->av[0]));
-	 * write(STDERR_FILENO, ": No aliases found\n", 19);
-	 */
 	if (!temp)
 	{
 		return (0);
