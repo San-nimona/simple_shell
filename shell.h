@@ -68,7 +68,7 @@ typedef struct data
 	path_l *path;
 	pid_t pid;
 	size_t length;
-}sh_data;
+} sh_data;
 
 /**
  * struct built_in - builtin functions struct
