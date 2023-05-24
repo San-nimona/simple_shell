@@ -77,7 +77,6 @@ void mod_dir(sh_data *shell, char *dir, char *newdir)
  * cd_err - prints the error
  * @shell: data of shell
  * @n: the number of the error
- *
  * Return: nothing
  */
 int cd_err(sh_data *shell, int n)
