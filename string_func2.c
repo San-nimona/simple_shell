@@ -27,7 +27,6 @@ int _strcmp(char *str1, char *str2)
 /**
  * _strdup - duplicates a string
  * @str: the string to be duplicated
- *
  * Return: pointer to the new string
  */
 char *_strdup(char *str)
